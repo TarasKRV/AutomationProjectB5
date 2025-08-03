@@ -55,5 +55,7 @@ public class Locators {
         WebElement aboutLink = driver.findElement(By.linkText("About"));
 
         aboutLink.click();
+
+
     }
 }
