@@ -2,15 +2,13 @@ package io.loop.test.day4;
 
 import io.loop.test.utilities.DocuportConstants;
 import io.loop.test.utilities.GeneralConstants;
-import io.loop.test.utilities.LoopCampConstans;
 import io.loop.test.utilities.WebDriverUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class T3_css_practice {
+public class CSS_homework {
     public static void main(String[] args) throws InterruptedException {
-
 
 
         WebDriver driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
@@ -24,13 +22,13 @@ public class T3_css_practice {
 
         String actualLogoDocuport = logo.getDomAttribute("alt");
 
-        System.out.println("docuport = " + actualLogoDocuport);
+        System.out.println("Docuport = " + actualLogoDocuport);
 
 
-        if(actualLogoDocuport.equals(DocuportConstants.EXPECTED_LOGO_DOCUPORT)){
+        if (actualLogoDocuport.equals(DocuportConstants.EXPECTED_LOGO_DOCUPORT)) {
             System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" matches actual logo docuport \"" + actualLogoDocuport + "\" => TEST PASS");
 
-        }else {
+        } else {
             System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" not matches actual logo docuport \"" + actualLogoDocuport + "\" => TEST FAIL");
         }
 
@@ -48,32 +46,28 @@ public class T3_css_practice {
 
         Thread.sleep(3000);
 
-
         WebElement confirmButton = driver.findElement(By.cssSelector("button[type='submit']>span[class='v-btn__content']"));
         confirmButton.click();
 
+        // Thread.sleep(3000);
 
-    /*
-    go to docuport app
-    identify docuport with css
-    get value of the attribute
-    validate if it is "Docuport"
+        WebElement burgerButton = driver.findElement(By.cssSelector("button[class='v-app-bar__nav-icon v-btn v-btn--icon v-btn--round theme--light v-size--default']"));
+        burgerButton.click();
+        System.out.println("===============================");
 
-    the rest is home work
-    locate:
-    username
-    password
-    login
-        with css
-    login to docuport
-    locate home icon of docuport after login or any other element after login
-    validated that you logged in
+        WebElement logoHome = driver.findElement(By.cssSelector("img[src='/img/logo.d7557277.svg']"));
 
-     */
+        String actualLogoDocuportHome = logoHome.getDomAttribute("alt");
+
+        System.out.println("Docuport home page = " + actualLogoDocuportHome);
 
 
+        if (actualLogoDocuport.equals(DocuportConstants.EXPECTED_LOGO_DOCUPORT)) {
+            System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" matches actual logo docuport \"" + actualLogoDocuportHome + "\" => TEST PASS");
+
+        } else {
+            System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" not matches actual logo docuport \"" + actualLogoDocuportHome + "\" => TEST FAIL");
+        }
 
     }
-
-
 }
