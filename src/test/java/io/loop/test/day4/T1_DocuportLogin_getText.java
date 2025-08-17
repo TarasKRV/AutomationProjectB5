@@ -44,6 +44,5 @@ public class T1_DocuportLogin_getText {
             System.out.println("Expected error message: " + DocuportConstants.ERROR_MASSEGE_FOR_EMPTY_PASSWORD + ", DOES NOT match actual error message: " + actualErrorMessage + " => TEST FAIL");
         }
 
-        driver.quit();
     }
 }
