@@ -40,13 +40,13 @@ public class T8_HTML_dropdown {
             WebElement signIn = driver.findElement(By.className("v-btn__content"));
             signIn.click();
 
-            WebElement dropdown = driver.findElement(By.cssSelector("button[type='submit']>span[class='v-btn__content']"));
-            dropdown.click();
+//            WebElement dropdown = driver.findElement(By.cssSelector("button[type='submit']>span[class='v-btn__content']"));
+//            dropdown.click();
+//
+//            Thread.sleep(2000);
 
-            Thread.sleep(2000);
-
-            WebElement dropdown2 = driver.findElement(By.xpath("//span[contains(text(),'Jeffrey')]"));
-            dropdown2.click();
+//            WebElement dropdown2 = driver.findElement(By.xpath("//span[contains(text(),'Jeffrey')]"));
+//            dropdown2.click();
 
 
 

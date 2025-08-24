@@ -14,7 +14,7 @@ public class T1_css_isDisplayed {
         WebDriver driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
        // driver.manage().window().maximize();
 
-        driver.get(GeneralConstants.HEROKUAPP_URL);
+        driver.get(GeneralConstants.HEROKUAPP_URL_FPASSWORD);
 
         WebElement forgotPasswordHeading = driver.findElement(By.cssSelector("div[class='example']>h2"));
 
