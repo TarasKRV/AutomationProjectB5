@@ -26,7 +26,11 @@ public class DocuportConstants {
 
     public static final String RESET_PASSWORD_EMAIL = "forgotpasswordg1@gmail.com";
 
-
+    // roles
+    public static String ADVISOR = "advisor";
+    public static String CLIENT = "client";
+    public static String SUPERVISOR = "supervisor";
+    public static String EMPLOYEE = "employee";
 
 
 
