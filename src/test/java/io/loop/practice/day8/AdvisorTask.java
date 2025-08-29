@@ -1,4 +1,4 @@
-package io.loop.test.practice.day8;
+package io.loop.practice.day8;
 
 import io.loop.test.base.TestBase;
 import io.loop.test.utilities.DocuportConstants;

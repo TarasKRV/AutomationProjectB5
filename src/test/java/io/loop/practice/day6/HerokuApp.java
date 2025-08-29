@@ -1,4 +1,4 @@
-package io.loop.test.practice.day6;
+package io.loop.practice.day6;
 
 import io.loop.test.utilities.GeneralConstants;
 import io.loop.test.utilities.WebDriverUtil;

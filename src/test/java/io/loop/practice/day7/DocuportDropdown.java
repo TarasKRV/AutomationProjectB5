@@ -1,11 +1,9 @@
-package io.loop.test.practice.day7;
+package io.loop.practice.day7;
 
 import io.loop.test.base.TestBase;
 import io.loop.test.utilities.DocuportConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;

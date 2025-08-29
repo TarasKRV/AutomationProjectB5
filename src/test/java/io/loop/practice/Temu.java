@@ -1,4 +1,4 @@
-package io.loop.test.practice;
+package io.loop.practice;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

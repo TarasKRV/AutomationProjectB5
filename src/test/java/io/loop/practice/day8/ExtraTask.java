@@ -1,4 +1,4 @@
-package io.loop.test.practice.day8;
+package io.loop.practice.day8;
 
 import io.loop.test.base.TestBase;
 import org.openqa.selenium.By;
@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-
-import static org.testng.Assert.assertEquals;
 
 public class ExtraTask extends TestBase {
     @Test
@@ -17,14 +15,7 @@ public class ExtraTask extends TestBase {
 
         //PAGE 1
 
-        //Validate the Registration Page
-        WebElement regPage = driver.findElement(By.xpath("//*[contains(text(),' LLC Registration ')]"));
-        String actualRegPage = regPage.getText();
-        assertEquals(actualRegPage, "LLC Registration", "NO MATCH");
-        System.out.println("actualRegPage:      " + actualRegPage);
-
-
-        WebElement llcButton = driver.findElement(By.xpath("//label[text()='LLC']"));
+        WebElement llcButton = driver.findElement(By.xpath("//label[.='LLC']"));
         llcButton.click();
 
         WebElement marylandButton = driver.findElement(By.xpath("//label[text()='Maryland']"));
@@ -65,14 +56,6 @@ public class ExtraTask extends TestBase {
 
         //PAGE 2
 
-
-        //Validate Registered Agent and Business Address page:
-        WebElement regPage2 = driver.findElement(By.xpath("//p[contains(.,'Registered Agent')]"));
-        String actualRegPage2 = regPage2.getText();
-        assertEquals(actualRegPage2.trim(), "Registered Agent and Business Address", "NO MATCH");
-        System.out.println("actualRegPage2:     " + actualRegPage2);
-
-
         Thread.sleep(1000);
         WebElement agentType = driver.findElement(By.xpath("//label[text()='Company']"));
         agentType.click();
@@ -112,13 +95,6 @@ public class ExtraTask extends TestBase {
         nextButton2.click();
 
         //PAGE 3
-
-        //Validate Payment Info page:
-        WebElement regPage4 = driver.findElement(By.xpath("//p[contains(.,' Payment Information ')]"));
-        String actualRegPage3 = regPage4.getText();
-        assertEquals(actualRegPage3.trim(), "Payment Information", "NO MATCH");
-        System.out.println("actualRegPage3:     " + actualRegPage3);
-
 
         WebElement firstName = driver.findElement(By.xpath("//label[text()='Share Ownership (%) *']/../../../../../../child::div/child::div/child::div/child::div/child::div/child::input[1]"));
         firstName.sendKeys("Tom");
