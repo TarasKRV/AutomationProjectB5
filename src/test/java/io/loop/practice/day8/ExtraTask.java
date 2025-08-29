@@ -13,6 +13,7 @@ public class ExtraTask extends TestBase {
         driver.get("https://app.docuport.app/company-formation/resident");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+
         //PAGE 1
 
         WebElement llcButton = driver.findElement(By.xpath("//label[.='LLC']"));
