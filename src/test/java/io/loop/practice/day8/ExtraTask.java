@@ -1,4 +1,4 @@
-package io.loop.test.practice.day8;
+package io.loop.practice.day8;
 
 import io.loop.test.base.TestBase;
 import org.openqa.selenium.By;
@@ -15,10 +15,10 @@ public class ExtraTask extends TestBase {
 
         //PAGE 1
 
-        WebElement llcButton = driver.findElement(By.xpath("//label[text()='LLC']"));
+        WebElement llcButton = driver.findElement(By.xpath("//label[.='LLC']"));
         llcButton.click();
 
-        WebElement marylandButton = driver.findElement(By.xpath("//label[text()='Maryland']"));
+        WebElement marylandButton = driver.findElement(By.xpath("//label[.='Maryland']"));
         marylandButton.click();
 
         WebElement companyName = driver.findElement(By.xpath("//label[text()='Legal Company Name  *']/following-sibling::input"));

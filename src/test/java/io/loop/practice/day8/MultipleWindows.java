@@ -1,10 +1,9 @@
-package io.loop.test.practice.day8;
+package io.loop.practice.day8;
 
 import io.loop.test.base.TestBase;
 import io.loop.test.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
