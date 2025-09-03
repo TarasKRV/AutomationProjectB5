@@ -27,6 +27,9 @@ public class DocuportConstants {
     // password
     public static final String PASSWORD = "Group1";;
 
+    public static final String EXPECTED_TEXT_APPOINTMENT = "Make an appointment";
+
+    public static final String EXPECTED_TEXT_LOGIN = "Login";
     // roles
     public static String ADVISOR = "advisor";
     public static String CLIENT = "client";

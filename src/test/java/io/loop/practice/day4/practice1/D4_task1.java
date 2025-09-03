@@ -1,7 +1,8 @@
 package io.loop.practice.day4.practice1;
 
 import io.loop.test.utilities.GeneralConstants;
-import io.loop.test.utilities.LoopCampConstans;
+import io.loop.test.utilities.LoopCampConstants;
+import io.loop.test.utilities.LoopCampConstants;
 import io.loop.test.utilities.WebDriverUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,15 +16,15 @@ public class D4_task1 {
 
         //driver.manage().window().maximize();
 
-        driver.navigate().to(LoopCampConstans.LOOPCAMP_FORGOT_PASSWORD_PAGE);
+        driver.navigate().to(LoopCampConstants.LOOPCAMP_FORGOT_PASSWORD_PAGE);
 
         WebElement forgotPassword = driver.findElement(By.cssSelector("div.example>h2"));
 
         String actualForgotPassword = forgotPassword.getText();
 
 
-        if (actualForgotPassword.equals(LoopCampConstans.EXPECTED_HEADER_FORGOT_PASSWORD_LOOPCAMP)){
-            System.out.println("Expected Forgot Password: \"" + LoopCampConstans.EXPECTED_HEADER_FORGOT_PASSWORD_LOOPCAMP + "\" matches actual forgot password: \"" + actualForgotPassword + "\" => TEST PASS");
+        if (actualForgotPassword.equals(LoopCampConstants.EXPECTED_HEADER_FORGOT_PASSWORD_LOOPCAMP)){
+            System.out.println("Expected Forgot Password: \"" + LoopCampConstants.EXPECTED_HEADER_FORGOT_PASSWORD_LOOPCAMP + "\" matches actual forgot password: \"" + actualForgotPassword + "\" => TEST PASS");
 
         }else {
             System.out.println("TEST FAIL");
@@ -36,8 +37,8 @@ public class D4_task1 {
         String actualeMail = eMail.getText();
 
 
-        if (actualeMail.equals(LoopCampConstans.EXPECTED_EMAIL_LOOPCAMP)){
-            System.out.println("Expected E-mail: \"" + LoopCampConstans.EXPECTED_EMAIL_LOOPCAMP + "\" matches actual E-mail: \"" + actualeMail + "\" => TEST PASS");
+        if (actualeMail.equals(LoopCampConstants.EXPECTED_EMAIL_LOOPCAMP)){
+            System.out.println("Expected E-mail: \"" + LoopCampConstants.EXPECTED_EMAIL_LOOPCAMP + "\" matches actual E-mail: \"" + actualeMail + "\" => TEST PASS");
 
         }else {
             System.out.println("TEST FAIL");
@@ -50,8 +51,8 @@ public class D4_task1 {
         String actualeMailInput = eMailInput.getDomAttribute("name");
 
 
-        if (actualeMailInput.equals(LoopCampConstans.EXPECTED_EMAILINPUT_LOOPCAMP)){
-            System.out.println("Expected input: \"" + LoopCampConstans.EXPECTED_EMAILINPUT_LOOPCAMP + "\" matches actual input: \"" + actualeMailInput + "\" => TEST PASS");
+        if (actualeMailInput.equals(LoopCampConstants.EXPECTED_EMAILINPUT_LOOPCAMP)){
+            System.out.println("Expected input: \"" + LoopCampConstants.EXPECTED_EMAILINPUT_LOOPCAMP + "\" matches actual input: \"" + actualeMailInput + "\" => TEST PASS");
 
         }else {
             System.out.println("TEST FAIL");
@@ -64,8 +65,8 @@ public class D4_task1 {
         String actualRetrievePassword = retrievePassword.getText();
 
 
-        if (actualRetrievePassword.equals(LoopCampConstans.EXPECTED_RETVIEVEPASSWORD_LOOPCAMP)){
-            System.out.println("Expected retrieve password: \"" + LoopCampConstans.EXPECTED_RETVIEVEPASSWORD_LOOPCAMP + "\" matches actual retrieve password: \"" + actualRetrievePassword + "\" => TEST PASS");
+        if (actualRetrievePassword.equals(LoopCampConstants.EXPECTED_RETVIEVEPASSWORD_LOOPCAMP)){
+            System.out.println("Expected retrieve password: \"" + LoopCampConstants.EXPECTED_RETVIEVEPASSWORD_LOOPCAMP + "\" matches actual retrieve password: \"" + actualRetrievePassword + "\" => TEST PASS");
 
         }else {
             System.out.println("TEST FAIL");
@@ -79,8 +80,8 @@ public class D4_task1 {
         String actualpoweredByLoopcamp = poweredByLoopcamp.getText();
 
 
-        if (actualpoweredByLoopcamp.equals(LoopCampConstans.EXPECTED_POWEREDBY_LOOPCAMP)){
-            System.out.println("Expected powered by loopcamp: \"" + LoopCampConstans.EXPECTED_POWEREDBY_LOOPCAMP + "\" matches actual powered by loopcamp: \"" + actualpoweredByLoopcamp + "\" => TEST PASS");
+        if (actualpoweredByLoopcamp.equals(LoopCampConstants.EXPECTED_POWEREDBY_LOOPCAMP)){
+            System.out.println("Expected powered by loopcamp: \"" + LoopCampConstants.EXPECTED_POWEREDBY_LOOPCAMP + "\" matches actual powered by loopcamp: \"" + actualpoweredByLoopcamp + "\" => TEST PASS");
 
         }else {
             System.out.println("TEST FAIL");
