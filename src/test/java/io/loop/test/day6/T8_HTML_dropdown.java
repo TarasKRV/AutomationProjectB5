@@ -14,42 +14,56 @@ import java.time.Duration;
 
 public class T8_HTML_dropdown {
 
+    WebDriver driver;
 
-        WebDriver driver;
+    @BeforeMethod
+    public void setUpMethod(){
+        driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
+        driver.manage().window().maximize();
+        driver.get(DocuportConstants.DOCUPORT_TEST);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    }
 
-        @BeforeMethod
-        public void beforeMethod() {
-            driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
-            //driver.manage().window().maximize();
-            driver.get(DocuportConstants.DOCUPORT_TEST);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    @AfterMethod
+    public void tearDownMethod(){
+        // driver.close();
+    }
 
-        }
-        @AfterMethod
-        public void afterMethod() {
-            // driver.quit();
-        }
-        @Test
-        public void t7_multi_dropdown() throws InterruptedException {
-            WebElement username = driver.findElement(By.xpath("//input[@id='input-14']"));
-            WebElement password = driver.findElement(By.xpath("//input[@id='input-15']"));
+    @Test
+    public void htmlDropdown(){
+        WebElement username = driver.findElement(By.xpath("//input[@id='input-14']"));
+        WebElement password = driver.findElement(By.xpath("//input[@id='input-15']"));
+        WebElement singIn = driver.findElement(By.className("v-btn__content"));
 
-            username.sendKeys(DocuportConstants.USERNAME_CLIENT);
-            password.sendKeys(DocuportConstants.PASSWORD);
+        username.sendKeys(DocuportConstants.USERNAME_CLIENT);
+        password.sendKeys(DocuportConstants.PASSWORD);
+        singIn.click();
 
-            WebElement signIn = driver.findElement(By.className("v-btn__content"));
-            signIn.click();
+       WebElement dropdown = driver.findElement(By.xpath("//input[@id='input-86']"));
+       dropdown.click();
+        //WebElement dropdown2 = driver.findElement(By.xpath("//span[contains(text(),'FeyruzTheBest5')]"));
+       // dropdown2.click();
 
-//            WebElement dropdown = driver.findElement(By.cssSelector("button[type='submit']>span[class='v-btn__content']"));
-//            dropdown.click();
-//
-//            Thread.sleep(2000);
+        WebElement warren = driver.findElement(By.xpath("//span[contains(text(),'Warren')]"));
+        warren.click();
 
-//            WebElement dropdown2 = driver.findElement(By.xpath("//span[contains(text(),'Jeffrey')]"));
-//            dropdown2.click();
 
 
 
 
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

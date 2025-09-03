@@ -10,36 +10,36 @@ import java.util.Set;
 
 public class T4_window_titles extends TestBase {
 
-          @Test
-        public void windowHandleTitle(){
-              driver.get("https://www.google.com");
+        /*
+        ((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
+         */
 
-              driver.switchTo().newWindow(WindowType.TAB);
-              driver.get("https://www.loopcamp.io");
+    @Test
+    public void windowHandleTitle(){
+        driver.get("https://www.google.com");
 
-              driver.switchTo().newWindow(WindowType.TAB);
-              driver.get("http://etsy.com");
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.loopcamp.io");
 
-              driver.switchTo().newWindow(WindowType.TAB);
-              driver.get("http://facebook.com");
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.amazon.com");
 
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.facebook.com");
 
-              System.out.println("driver.getTitle() = " + driver.getTitle());
+        System.out.println("driver.getTitle() = " + driver.getTitle());
 
-//              Set<String> windowHandles = driver.getWindowHandles();
-//              for (String window : windowHandles) {
-//
-//              driver.switchTo().window(window);
-//              if (driver.getTitle().contains("Google")) {
-//              break;
-//              }
+//        Set <String> windowHandles = driver.getWindowHandles();
+//        for (String window : windowHandles) {
+//            driver.switchTo().window(window);
+//            if (driver.getTitle().contains("Google")){
+//                break;
+//            }
+//        }
 
-//              BrowserUtils.switchWindowAndValidate(driver, "www.loopcamp.io", "Loopcamp");
-
-              BrowserUtils.switchToWindow(driver, "Google");
-              System.out.println("driver.getTitle() = " + driver.getTitle());
-
-
-              }
-          }
-
+        //BrowserUtils.switchWindowAndValidate(driver, "www.loopcamp.io", "Loopcamp");
+        BrowserUtils.switchToWindow(driver, "Amazon");
+    }
+}

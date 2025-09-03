@@ -6,38 +6,40 @@ import static org.testng.Assert.*;
 
 public class T3_testng_intro {
 
-    @Test(priority = 2)
-    public void test1() {
-        System.out.println("test 1 is running");
-        String actual = "Feyruz";
-        String expected = "Nadir";
-        assertEquals(actual, expected, "Incorrect result");
-    }
 
-    @Test(priority = 1)
-    public void test2() {
-        System.out.println("test 2 is running");
+    @Test (priority = 1)
+    public void test2(){
+        System.out.println("Test 2 is running");
         String actual = "Nina";
         String expected = "Nina";
-        Assert.assertEquals(actual, expected, "Actual does not match expected value");
+        assertEquals(actual, expected, "Actual does NOT match expected");
+    }
+
+    @Test(priority = 2)
+    public void test1(){
+        System.out.println("Test 1 is running");
+        String actual = "Feyruz";
+        String expected = "Nadir";
+        assertEquals(actual, expected, "This message will show only if test fails");
     }
 
     @BeforeMethod
-    public void setUpMethod() {
+    public void setUpMethod(){
         System.out.println("Before method is running");
     }
 
     @AfterMethod
-    public void tearDownMethod() {
+    public void tearDownMethod(){
         System.out.println("After method is running");
     }
 
     @BeforeClass
-    public void setUp() {
-        System.out.println("Before Class is running");
+    public void setUp(){
+        System.out.println("Before class is running");
     }
+
     @AfterClass
-    public void tearDown() {
-        System.out.println("After Class is running");
+    public void tearDown(){
+        System.out.println("After class is running");
     }
 }

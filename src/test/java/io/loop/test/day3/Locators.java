@@ -24,38 +24,41 @@ public class Locators {
         // navigate to google
         driver.get("https://www.google.com");
 
-        // locate the element
+        // locate the element with ID
         WebElement searchBoxWithID = driver.findElement(By.id("APjFqb"));
 
         // get a text to search
         String textToSearch = "Feyruz is the king of JAVA";
 
-
         // send the text to the input
         searchBoxWithID.sendKeys(textToSearch);
 
-
+        // add some wait
         Thread.sleep(3000);
 
-        //clear the box
+        // clear the box
         searchBoxWithID.clear();
 
         // click enter
-        searchBoxWithID.sendKeys("Taras Kravchuk" + Keys.ENTER);
+        searchBoxWithID.sendKeys("Nadir is smart" + Keys.ENTER);
 
-
+        // navigate back
         driver.navigate().back();
 
+        // locate search box with name
         WebElement searchBoxWithName = driver.findElement(By.name("q"));
 
+        // send text to the search box which is spied with name
         searchBoxWithName.sendKeys(textToSearch + Keys.ENTER);
 
+        // navigate back again
         driver.navigate().back();
 
+        // locate about with using linkText
         WebElement aboutLink = driver.findElement(By.linkText("About"));
 
+        // click that link
         aboutLink.click();
-
 
     }
 }

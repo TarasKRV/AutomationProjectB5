@@ -2,56 +2,13 @@ package io.loop.test.day4;
 
 import io.loop.test.utilities.DocuportConstants;
 import io.loop.test.utilities.GeneralConstants;
-import io.loop.test.utilities.LoopCampConstans;
+import io.loop.test.utilities.LoopCampConstants;
 import io.loop.test.utilities.WebDriverUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class T3_css_practice {
-    public static void main(String[] args) throws InterruptedException {
-
-
-
-        WebDriver driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
-
-        //driver.manage().window().maximize();
-
-        driver.navigate().to(DocuportConstants.DOCUPORT_TEST);
-
-
-        WebElement logo = driver.findElement(By.cssSelector("img[src='/img/logo.d7557277.svg']"));
-
-        String actualLogoDocuport = logo.getDomAttribute("alt");
-
-        System.out.println("docuport = " + actualLogoDocuport);
-
-
-        if(actualLogoDocuport.equals(DocuportConstants.EXPECTED_LOGO_DOCUPORT)){
-            System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" matches actual logo docuport \"" + actualLogoDocuport + "\" => TEST PASS");
-
-        }else {
-            System.out.println("Expected logo docuport \"" + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\" not matches actual logo docuport \"" + actualLogoDocuport + "\" => TEST FAIL");
-        }
-
-        WebElement username = driver.findElement(By.id("input-14"));
-
-        username.sendKeys(DocuportConstants.USERNAME_CLIENT);
-
-        WebElement password = driver.findElement(By.id("input-15"));
-
-        password.sendKeys(DocuportConstants.PASSWORD);
-
-        WebElement loginButton = driver.findElement(By.className("v-btn__content"));
-        loginButton.click();
-
-
-        Thread.sleep(3000);
-
-
-        WebElement confirmButton = driver.findElement(By.cssSelector("button[type='submit']>span[class='v-btn__content']"));
-        confirmButton.click();
-
 
     /*
     go to docuport app
@@ -71,9 +28,48 @@ public class T3_css_practice {
 
      */
 
+    public static void main(String[] args) {
+
+        // go to the docuport url
+        WebDriver driver = WebDriverUtil.getDriver(GeneralConstants.CHROME);
+        driver.manage().window().maximize();
+        driver.navigate().to(DocuportConstants.DOCUPORT_TEST);
+
+        // locate the element with css
+        WebElement logo = driver.findElement(By.cssSelector("img[src='/img/logo.d7557277.svg']"));
+
+        // get value of the attribute
+        String actualLogoDocuport = logo.getDomAttribute("alt");
+        // String docuport = logo.getAttribute("alt")
+
+        System.out.println("docuport = " + actualLogoDocuport);
+
+        // validation
+        if(DocuportConstants.EXPECTED_LOGO_DOCUPORT.equals(actualLogoDocuport)){
+            System.out.println("expected logo: \""
+                    + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\", matches actual logo: \"" + actualLogoDocuport + "\" => TEST PASS");
+        } else {
+            System.out.println("expected logo: \""
+                    + DocuportConstants.EXPECTED_LOGO_DOCUPORT + "\", DOES NOT match actual logo: \"" + actualLogoDocuport + "\" => TEST FAIL");
+        }
 
 
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

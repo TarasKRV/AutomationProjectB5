@@ -3,9 +3,17 @@ package io.loop.test.day2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SeleniumTest {
+
+
+    private static final Logger log = LoggerFactory.getLogger(SeleniumTest.class);
+
     public static void main(String[] args) throws InterruptedException {
+
+
 
 
         // older version of selenium you need to set up web driver manage
@@ -13,7 +21,6 @@ public class SeleniumTest {
 
         // Setting up the driver
         WebDriver driver = new ChromeDriver();
-
 
         // maximize the window
         driver.manage().window().maximize();
@@ -33,17 +40,16 @@ public class SeleniumTest {
         // just wait
         Thread.sleep(3000);
 
-        //navigate back to back
+        // navigate back to page
         driver.navigate().back();
 
-        //navigate forward
+        // navigate forward
         driver.navigate().forward();
 
-
-        //refresh
+        // refresh
         driver.navigate().refresh();
 
-        //quiting the browser
+        // quiting the browser
         driver.quit();
     }
 }

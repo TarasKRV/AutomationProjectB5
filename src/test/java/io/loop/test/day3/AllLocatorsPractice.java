@@ -11,41 +11,47 @@ public class AllLocatorsPractice {
 
         // create driver object
         WebDriver driver = new ChromeDriver();
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         // navigate to loopcamp practice page
         // https://loopcamp.vercel.app
 
         driver.get("https://loopcamp.vercel.app/registration_form.html");
 
-
-        // WebElement firstName = driver.findElement(By.name("firstname"));
-        // WebElement firstName = driver.findElement(By.className("form-control"));
+        // locate the first name
         WebElement firstName = driver.findElement(By.name("firstname"));
+        //WebElement firstName = driver.findElement(By.className("form-control"));
 
+        // first name to send and last name to send
         String firstname = "Loop";
-
-        firstName.sendKeys(firstname);
-
-
-        WebElement lastName = driver.findElement(By.name("lastname"));
-
         String lastname = "Camp";
 
+        // send keys firstname
+        firstName.sendKeys(firstname);
+
+        // send keys last name
+        WebElement lastName = driver.findElement(By.name("lastname"));
         lastName.sendKeys(lastname);
 
-        WebElement userName = driver.findElement(By.name("username"));
-
-        String username = "Academy";
-
-        userName.sendKeys(username);
-
-
+        // send gender
+        // this will return us 3 elements, and always will click the first one, that why we should pay attention to locate unique elements
         WebElement female = driver.findElement(By.name("gender"));
         female.click();
-
-
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

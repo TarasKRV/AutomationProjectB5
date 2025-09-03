@@ -10,8 +10,9 @@ import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
+public class T2_windows extends TestBase {
 
-/*
+     /*
     1. Open a chrome browser
     2. Go to : http://the-internet.herokuapp.com/windows
     3. Assert: Title is “The Internet”
@@ -19,36 +20,46 @@ import static org.testng.Assert.assertEquals;
     5. Switch to new Window.
     6. Assert: Title is “New Window”
      */
-public class T2_windows extends TestBase {
-
 
     @Test
-    public void test_window_handle() throws InterruptedException {
-
+    public void test_window_handle() {
+        // 2. Go to : http://the-internet.herokuapp.com/windows
         driver.get("http://the-internet.herokuapp.com/windows");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        // 3. Assert: Title is “The Internet”
+        assertEquals(driver.getTitle(), "The Internet", "Actual does not match expected");
 
-       assertEquals(driver.getTitle(), "The Internet");
-
+        // print out the current window handle
         System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
 
+        // 4. Click to: “Click Here” link
         WebElement clickHere = driver.findElement(By.xpath("//a[text()='Click Here']"));
         clickHere.click();
 
         System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
 
+        // get original window handle
         String originalWindow = driver.getWindowHandle();
 
-        Set<String> windowHandles = driver.getWindowHandles();
+        // get all window handles
+        Set <String> windowHandles = driver.getWindowHandles();
 
+        // loop through and stay at the last window
         for (String each : windowHandles) {
             System.out.println("each window handle: " + each);
             driver.switchTo().window(each);
         }
+
         System.out.println("driver.getTitle() = " + driver.getTitle());
 
+        // switch to original window
         driver.switchTo().window(originalWindow);
         System.out.println("driver.getTitle() = " + driver.getTitle());
     }
-
 }
+
+
+
+
+
+

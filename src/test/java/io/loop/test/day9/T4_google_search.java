@@ -28,7 +28,6 @@ public class T4_google_search {
         System.out.println("((RemoteWebDriver) Driver.getDriver()).getSessionId() = " + ((RemoteWebDriver) Driver.getDriver()).getSessionId());
         WebElement searchBox = Driver.getDriver().findElement(By.name("q"));
         searchBox.sendKeys("Loop Academy" + Keys.ENTER);
-        Thread.sleep(2000);
         String actualTitle = Driver.getDriver().getTitle();
         assertEquals(actualTitle, "Loop Academy - Google Search");
     }
@@ -43,3 +42,15 @@ public class T4_google_search {
         myUploads.click();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
